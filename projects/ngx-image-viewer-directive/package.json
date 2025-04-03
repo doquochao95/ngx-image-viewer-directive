@@ -19,19 +19,19 @@
     },
     "author": "@doquochao",
     "license": "MIT",
-    "description": "Angular library that provides simple file manager.",
+    "description": "Angular library that provides simple image viewer.",
     "bugs": {
         "url": "https://github.com/doquochao95/ngx-image-viewer-directive/issuess"
     },
     "keywords": [
         "angular",
         "ng",
-        "file-manager",
-        "file-explorer",
-        "explorer",
-        "manager",
-        "storage",
-        "files"
+        "ngx",
+        "image",
+        "viewer",
+        "directive",
+        "image-viewer",
+        "image-viewer-directive"
     ],
     "main": "bundles/ngx-image-viewer-directive.umd.js",
     "module": "fesm2022/ngx-image-viewer-directive.mjs",
