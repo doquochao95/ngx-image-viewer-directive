@@ -1,0 +1,54 @@
+{
+    "name": "ngx-image-viewer-directive",
+    "version": "1.0.0",
+    "peerDependencies": {
+        "@angular/common": ">= 16.0.0",
+        "@angular/core": ">= 16.0.0",
+        "@angular/cdk": ">=16.0.0",
+        "rxjs": ">= 6.5.0",
+        "@types/bootstrap": "^5.0.15",
+        "bootstrap": "^5.0.1",
+        "ngx-bootstrap": "11.0.2"
+    },
+    "dependencies": {
+        "tslib": "^2.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/doquochao95/ngx-image-viewer-directive.git"
+    },
+    "author": "@doquochao",
+    "license": "MIT",
+    "description": "Angular library that provides simple file manager.",
+    "bugs": {
+        "url": "https://github.com/doquochao95/ngx-image-viewer-directive/issuess"
+    },
+    "keywords": [
+        "angular",
+        "ng",
+        "file-manager",
+        "file-explorer",
+        "explorer",
+        "manager",
+        "storage",
+        "files"
+    ],
+    "main": "bundles/ngx-image-viewer-directive.umd.js",
+    "module": "fesm2022/ngx-image-viewer-directive.mjs",
+    "es2015": "fesm2015/ngx-image-viewer-directive.js",
+    "esm2015": "esm2015/ngx-image-viewer-directive.js",
+    "fesm2015": "fesm2015/ngx-image-viewer-directive.js",
+    "typings": "index.d.ts",
+    "metadata": "ngx-image-viewer-directive.metadata.json",
+    "sideEffects": false,
+    "exports": {
+        "./package.json": {
+            "default": "./package.json"
+        },
+        ".": {
+            "types": "./index.d.ts",
+            "esm": "./esm2022/ngx-image-viewer-directive.mjs",
+            "default": "./fesm2022/ngx-image-viewer-directive.mjs"
+        }
+    }
+}
