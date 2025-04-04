@@ -1,62 +1,76 @@
 <div class="backdrop"
      [@backdrop]>
-  <div class="content">
-    <div class="outer">
-      <div class="toolbar">
-        <ul class="toolbar-side toolbar-left">
-          <li class="toolbar-item"><span class="toolbar-item-child"></span></li>
-        </ul>
-        <ul class="toolbar-side toolbar-right">
-          <li class="toolbar-item">
-            <button type="button"
-                    aria-label="Zoom in"
-                    class="toolbar-item-child button zoom-in-button"
-                    (click)="zoomIn()"
-                    [disabled]="maxScaleReached"></button>
-          </li>
-          <li class="toolbar-item">
-            <button type="button"
-                    aria-label="Zoom out"
-                    class="toolbar-item-child button zoom-out-button"
-                    [disabled]="minScaleReached"
-                    (click)="zoomOut()"></button>
-          </li>
-          <li class="toolbar-item">
-            <button type="button"
-                    aria-label="Close lightbox"
-                    class="toolbar-item-child button close-button"
-                    (click)="close()"></button>
-          </li>
-        </ul>
-      </div>
-      <div class="inner"
-           [@reset]="resetState"
-           (@reset.done)="resetState && resetState=!resetState">
-        <div class="wrapper"
-             (click)="close()">
-          <div #image_wrapper
-               class="image-wrapper">
-            <img #image_viewer
-                 class="image-viewer"
-                 (load)="alignCenterImage()"
-                 [src]="image.src"
-                 draggable="false" />
-            <canvas #image_debug
-                    class="image-debug"
-                    (wheel)="zoomWheel($event)"
-                    (click)="$event.stopPropagation()"
-                    (dblclick)="reset()"
-                    (mousedown)="onMousedown($event)"
-                    (mouseup)="onMouseUp()"
-                    (mouseleave)="onMouseLeave()"
-                    (mousemove)="onMouseMove($event)"
-                    (touchstart)="onTouchStart($event)"
-                    (touchend)="onTouchEnd()"
-                    (touchmove)="onTouchMove($event)"
-                    [width]="imageWidth"
-                    [height]="imageHeight"></canvas>
-          </div>
+    <div class="content">
+        <div class="outer">
+            <div class="toolbar">
+                <ul class="toolbar-side toolbar-left">
+                    <li class="toolbar-item"><span class="toolbar-item-child"></span></li>
+                </ul>
+                <ul class="toolbar-side toolbar-right">
+                    <li class="toolbar-item">
+                        <button type="button"
+                                aria-label="Zoom in"
+                                class="toolbar-item-child button zoom-in-button"
+                                (click)="zoomIn()"
+                                [disabled]="maxScaleReached"></button>
+                    </li>
+                    <li class="toolbar-item">
+                        <button type="button"
+                                aria-label="Zoom out"
+                                class="toolbar-item-child button zoom-out-button"
+                                [disabled]="minScaleReached"
+                                (click)="zoomOut()"></button>
+                    </li>
+                    <li class="toolbar-item">
+                        <button type="button"
+                                aria-label="Close lightbox"
+                                class="toolbar-item-child button close-button"
+                                (click)="close()"></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="inner"
+                 [@reset]="resetState"
+                 (@reset.done)="resetState && resetState=!resetState">
+                <div class="wrapper"
+                     (click)="close()">
+                    <div #image_wrapper
+                         class="image-wrapper"
+                         (mousemove)="onMouseMove($event)"
+                         (touchmove)="onTouchMove($event)">
+                        <img #image_viewer
+                             class="image-viewer"
+                             (load)="alignCenterImage()"
+                             [src]="image.src"
+                             draggable="false" />
+                        <canvas #image_debug
+                                class="image-debug"
+                                (wheel)="zoomWheel($event)"
+                                (click)="$event.stopPropagation()"
+                                (dblclick)="reset()"
+                                (mousedown)="onMousedown($event)"
+                                (mouseup)="onMouseUp()"
+                                (mouseleave)="onMouseLeave()"
+                                (touchstart)="onTouchStart($event)"
+                                (touchend)="onTouchEnd()"
+                                [width]="imageWidth"
+                                [height]="imageHeight">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+<div class="dialog-info"
+     *ngIf="debugMode">
+    Image params<br>
+    ----------
+    <div>Screen: {{screenWidth| number}}x{{screenHeight| number}} </div>
+    <div>Scale: {{scale | number}} </div>
+    <div>Scale: {{scale | number}} </div>
+    <div>Acc-X: {{accx | number}} </div>
+    <div>Acc-Y: {{accy | number}} </div>
+    <div>Cusor-X: {{cusorX | number}} </div>
+    <div>Cusor-Y: {{cusorY | number}} </div>
+</div>

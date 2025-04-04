@@ -8,13 +8,9 @@ import { ImageViewerContainerComponent } from '../components/image-viewer-contai
 export class ImageViewerDirective {
   @HostListener('click', ['$event']) async onClick($event: any) {
     const imageUrl = $event.currentTarget.src
-    const screenWidth = $event.view.innerWidth
-    const screenHeight = $event.view.innerHeight
     let img = await this.processImage(imageUrl) as HTMLImageElement
     let container = this.viewContainerRef.createComponent(ImageViewerContainerComponent);
     container.instance.image = img;
-    container.instance.screenWidth = screenWidth;
-    container.instance.screenHeight = screenHeight;
     container.instance.componentRef = container
   }
   @HostListener('mouseenter') onMouseEnter() {

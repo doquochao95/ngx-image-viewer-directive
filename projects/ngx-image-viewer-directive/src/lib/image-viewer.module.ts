@@ -4,11 +4,11 @@ import { ImageViewerContainerComponent } from './components/image-viewer-contain
 import { ImageViewerDirective } from './directives/image-viewer.directive';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NgOptimizedImage,
-  ],
-  declarations: [ImageViewerContainerComponent, ImageViewerDirective],
-  exports: [ImageViewerContainerComponent, ImageViewerDirective]
+    imports: [
+        CommonModule,
+        NgOptimizedImage,
+    ],
+    declarations: [ImageViewerContainerComponent, ImageViewerDirective],
+    exports: [ImageViewerContainerComponent, ImageViewerDirective]
 })
 export class ImageViewerModule { }
