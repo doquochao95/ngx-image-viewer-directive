@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 
 export class MainComponent {
     imgs: string[] = [
-        '/assets/img/example-path.png',
-        '/assets/img/preview-detail.png',
-        '/assets/img/preview-file.png',
+        '/assets/image/example-path.png',
+        '/assets/image/preview-detail.png',
+        '/assets/image/preview-file.png',
     ]
     constructor() {}
 }
